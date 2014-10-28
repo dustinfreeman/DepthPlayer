@@ -181,7 +181,6 @@ void drawKinectData() {
 	glBindBuffer(GL_ARRAY_BUFFER, cboId);
 	glColorPointer(3, GL_FLOAT, 0, NULL);
 
-	glPointSize(1.f);
 	glDrawArrays(GL_POINTS, 0, width*height);
 	
 	glDisableClientState(GL_VERTEX_ARRAY);
@@ -198,6 +197,9 @@ int main(int argc, char* argv[]) {
 
 	cameraPos[0] = 0;
 	cameraPos[2] = -1.5;
+
+	glEnable(GL_PROGRAM_POINT_SIZE_EXT);
+	glPointSize(1.0f);
 
 	// Set up array buffers
 	glGenBuffers(1, &vboId);
