@@ -5,6 +5,7 @@
 
 #include "main.h"
 #include "glut.h"
+#include "keyboard.h"
 
 #include <cmath>
 #include <cstdio>
@@ -18,6 +19,9 @@
 
 // OpenGL Variables
 long depthToRgbMap[width*height*2];
+
+double cameraPos[3];
+
 // We'll be using buffer objects to store the kinect point cloud
 GLuint vboId;
 GLuint cboId;
@@ -131,20 +135,41 @@ void getKinectData() {
 	glUnmapBuffer(GL_ARRAY_BUFFER);
 }
 
-void rotateCamera() {
+void moveCamera() {
 	static double angle = 0.;
 	static double radius = 3.;
-	double x = radius*sin(angle);
-	double z = radius*(1-cos(angle)) - radius/2;
+
+	//interaction
+	if (IsKeyDown['w'])
+		cameraPos[2] -= 0.1;
+	if (IsKeyDown['s'])
+		cameraPos[2] += 0.1;
+
+	if (IsKeyDown['a'])
+		cameraPos[0] -= 0.1;
+	if (IsKeyDown['d'])
+		cameraPos[0] += 0.1;
+
+	//cameraPos[0] = radius*sin(angle);
+	//cameraPos[2] = radius*(1 - cos(angle)) - radius / 2;
+
+	double lookAt[3];
+	lookAt[0] = 0;
+	lookAt[1] = 0;
+	lookAt[2] = radius/2;
+	//lookAt[0] = cameraPos[0] + radius*sin(angle);
+	//lookAt[2] = cameraPos[2] + radius*(1 - cos(angle)) - radius / 2;
 	glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-	gluLookAt(x,0,z,0,0,radius/2,0,1,0);
-	angle += 0.05;
+	gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2],
+		lookAt[0], lookAt[1], lookAt[2],
+		0,1,0);
+	//angle += 0.05;
+
+	//printf("cameraPos: %f %f %f \n", cameraPos[0], cameraPos[1], cameraPos[2]);
 }
 
 void drawKinectData() {
-	getKinectData();
-	rotateCamera();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnableClientState(GL_VERTEX_ARRAY);
@@ -170,6 +195,9 @@ int main(int argc, char* argv[]) {
     // OpenGL setup
     glClearColor(0,0,0,0);
     glClearDepth(1.0f);
+
+	cameraPos[0] = 0;
+	cameraPos[2] = -1.5;
 
 	// Set up array buffers
 	glGenBuffers(1, &vboId);

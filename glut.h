@@ -4,6 +4,9 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "gl\glut.h"
+
+#include "keyboard.h"
+
 bool init(int argc, char* argv[]);
 void draw();
 void execute();

@@ -2,8 +2,14 @@
 #include "main.h"
 
 void draw() {
-   drawKinectData();
-   glutSwapBuffers();
+	drawKinectData();
+	glutSwapBuffers();
+}
+
+void loop() {
+	getKinectData();
+	moveCamera();
+	draw();
 }
 
 void execute() {
@@ -14,9 +20,11 @@ bool init(int argc, char* argv[]) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
     glutInitWindowSize(width,height);
-    glutCreateWindow("Kinect SDK Tutorial");
-    glutDisplayFunc(draw);
-    glutIdleFunc(draw);
+    glutCreateWindow("Live Kinect View");
+	glutDisplayFunc(loop);
+	glutIdleFunc(loop);
+	glutKeyboardFunc(keyDown);
+	glutKeyboardUpFunc(keyUp);
 	glewInit();
     return true;
 }
