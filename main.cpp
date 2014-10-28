@@ -141,22 +141,22 @@ void moveCamera() {
 
 	//interaction
 	if (IsKeyDown['w'])
-		cameraPos[2] -= 0.1;
-	if (IsKeyDown['s'])
 		cameraPos[2] += 0.1;
+	if (IsKeyDown['s'])
+		cameraPos[2] -= 0.1;
 
 	if (IsKeyDown['a'])
-		cameraPos[0] -= 0.1;
-	if (IsKeyDown['d'])
 		cameraPos[0] += 0.1;
+	if (IsKeyDown['d'])
+		cameraPos[0] -= 0.1;
 
 	//cameraPos[0] = radius*sin(angle);
 	//cameraPos[2] = radius*(1 - cos(angle)) - radius / 2;
 
 	double lookAt[3];
-	lookAt[0] = 0;
+	lookAt[0] = cameraPos[0];
 	lookAt[1] = 0;
-	lookAt[2] = radius/2;
+	lookAt[2] = cameraPos[2] + radius;
 	//lookAt[0] = cameraPos[0] + radius*sin(angle);
 	//lookAt[2] = cameraPos[2] + radius*(1 - cos(angle)) - radius / 2;
 	glMatrixMode(GL_MODELVIEW);
@@ -193,8 +193,8 @@ int main(int argc, char* argv[]) {
     if (!initKinect()) return 1;
 
     // OpenGL setup
-    glClearColor(0,0,0,0);
-    glClearDepth(1.0f);
+	//glClearColor(0, 0, 0, 0);
+    //glClearDepth(1.0f);
 
 	cameraPos[0] = 0;
 	cameraPos[2] = -1.5;
