@@ -19,7 +19,7 @@ void execute() {
 bool init(int argc, char* argv[]) {
     glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(width,height);
+	glutInitWindowSize(width*1.5, height*1.5);
     glutCreateWindow("Live Kinect View");
 	glutDisplayFunc(loop);
 	glutIdleFunc(loop);
