@@ -200,6 +200,8 @@ int main(int argc, char* argv[]) {
 
 	glEnable(GL_PROGRAM_POINT_SIZE_EXT);
 	glPointSize(1.0f);
+		
+	glEnable(GL_DEPTH_TEST);
 
 	// Set up array buffers
 	glGenBuffers(1, &vboId);

@@ -3,7 +3,7 @@
 
 bool IsKeyDown[KEY_ARRAY_SIZE];
 
-const bool VERBOSE_KEY = true;
+const bool VERBOSE_KEY = false;
 
 void keyDown(unsigned char key, int x, int y) {
 	if (VERBOSE_KEY)
