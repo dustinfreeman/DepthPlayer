@@ -27,6 +27,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -42,15 +43,20 @@
     <IncludePath>$(KINECTSDK10_DIR)\inc;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(KINECTSDK10_DIR)\inc;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../kriffer/kriffer/;../riffer/riffer/;..\SFML-2.1-windows-vc12-32bits\SFML-2.1\include;..\opencv\build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glew32.lib;freeglut.lib;Kinect10.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)/gl/;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio-d.lib;sfml-main-d.lib;sfml-system-d.lib;opencv_core248d.lib;opencv_imgproc248d.lib;opencv_highgui248d.lib;glew32.lib;freeglut.lib;Kinect10.lib;avrt.lib;mfuuid.lib;mfplat.lib;wmcodecdspuuid.lib;Msdmo.lib;dmoguids.lib;amstrmid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;jpeg.lib;turbojpeg.lib;pthreadVC1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/gl/;..\SFML-2.1-windows-vc12-32bits\SFML-2.1\lib;..\opencv\build\x86\vc12\lib;..\libjpeg-turbo\lib;..\kriffer\kriffer\pthread\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -59,19 +65,44 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>../kriffer/kriffer/;../riffer/riffer/;..\SFML-2.1-windows-vc12-32bits\SFML-2.1\include;..\opencv\build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-audio.lib;sfml-main.lib;sfml-system.lib;opencv_core248.lib;opencv_imgproc248.lib;opencv_highgui248.lib;glew32.lib;freeglut.lib;Kinect10.lib;avrt.lib;mfuuid.lib;mfplat.lib;wmcodecdspuuid.lib;Msdmo.lib;dmoguids.lib;amstrmid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;jpeg.lib;turbojpeg.lib;pthreadVC1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/gl/;..\SFML-2.1-windows-vc12-32bits\SFML-2.1\lib;..\opencv\build\x86\vc12\lib;..\libjpeg-turbo\lib;..\kriffer\kriffer\pthread\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\kriffer\kriffer\ResamplerUtil.cpp" />
+    <ClCompile Include="..\kriffer\kriffer\WASAPICapture.cpp" />
     <ClCompile Include="glut.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\kriffer\kriffer\audio_buffer.h" />
+    <ClInclude Include="..\kriffer\kriffer\audio_processor.h" />
+    <ClInclude Include="..\kriffer\kriffer\audio_utils.h" />
+    <ClInclude Include="..\kriffer\kriffer\cvprocessor.h" />
+    <ClInclude Include="..\kriffer\kriffer\img_chunk.h" />
+    <ClInclude Include="..\kriffer\kriffer\k1processor.h" />
+    <ClInclude Include="..\kriffer\kriffer\k2processor.h" />
+    <ClInclude Include="..\kriffer\kriffer\kfr_sound_buffer_recorder.h" />
+    <ClInclude Include="..\kriffer\kriffer\kprocessor.h" />
+    <ClInclude Include="..\kriffer\kriffer\kriffer.h" />
+    <ClInclude Include="..\kriffer\kriffer\kr_util.h" />
+    <ClInclude Include="..\kriffer\kriffer\nuiaudio.h" />
+    <ClInclude Include="..\kriffer\kriffer\nuicolourstream.h" />
+    <ClInclude Include="..\kriffer\kriffer\nuidepthstream.h" />
+    <ClInclude Include="..\kriffer\kriffer\nuiskeletonstream.h" />
+    <ClInclude Include="..\kriffer\kriffer\nuistream.h" />
+    <ClInclude Include="..\kriffer\kriffer\processor.h" />
+    <ClInclude Include="..\kriffer\kriffer\ResamplerUtil.h" />
+    <ClInclude Include="..\kriffer\kriffer\sfml_audio_processor.h" />
+    <ClInclude Include="..\kriffer\kriffer\WASAPICapture.h" />
     <ClInclude Include="glut.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="main.h" />

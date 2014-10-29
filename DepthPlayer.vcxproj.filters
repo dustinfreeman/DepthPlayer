@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\kriffer">
+      <UniqueIdentifier>{594e2976-43e4-4e42-a2fb-92535127d845}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,6 +27,12 @@
     <ClCompile Include="keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\kriffer\kriffer\ResamplerUtil.cpp">
+      <Filter>Source Files\kriffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kriffer\kriffer\WASAPICapture.cpp">
+      <Filter>Source Files\kriffer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -34,6 +43,66 @@
     </ClInclude>
     <ClInclude Include="keyboard.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\audio_buffer.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\audio_processor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\audio_utils.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\cvprocessor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\img_chunk.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\k1processor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\k2processor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\kfr_sound_buffer_recorder.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\kprocessor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\kr_util.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\kriffer.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\nuiaudio.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\nuicolourstream.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\nuidepthstream.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\nuiskeletonstream.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\nuistream.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\processor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\ResamplerUtil.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\sfml_audio_processor.h">
+      <Filter>Source Files\kriffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kriffer\kriffer\WASAPICapture.h">
+      <Filter>Source Files\kriffer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
