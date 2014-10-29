@@ -16,6 +16,9 @@
     <Filter Include="Source Files\kriffer">
       <UniqueIdentifier>{594e2976-43e4-4e42-a2fb-92535127d845}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\kriffer\lzfx">
+      <UniqueIdentifier>{856914ab-26b6-4434-9b2b-664c4cd98451}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +35,12 @@
     </ClCompile>
     <ClCompile Include="..\kriffer\kriffer\WASAPICapture.cpp">
       <Filter>Source Files\kriffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kriffer\kriffer\lzfx\lzfx.c">
+      <Filter>Source Files\kriffer\lzfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kriffer\kriffer\lzfx\getopt.c">
+      <Filter>Source Files\kriffer\lzfx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

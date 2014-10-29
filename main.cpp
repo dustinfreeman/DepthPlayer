@@ -8,11 +8,11 @@
 #include "keyboard.h"
 
 //kriffer ===========
-//#include <riffer.h>
-//#include <processor.h>
-//#include <audio_processor.h>
-//#include <kprocessor.h>
-//#include <k1processor.h>
+#include <riffer.h>
+#include <processor.h>
+#include <audio_processor.h>
+#include <kprocessor.h>
+#include <k1processor.h>
 // ==================
 
 #include <cmath>

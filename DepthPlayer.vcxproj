@@ -76,6 +76,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\kriffer\kriffer\lzfx\getopt.c" />
+    <ClCompile Include="..\kriffer\kriffer\lzfx\lzfx.c" />
     <ClCompile Include="..\kriffer\kriffer\ResamplerUtil.cpp" />
     <ClCompile Include="..\kriffer\kriffer\WASAPICapture.cpp" />
     <ClCompile Include="glut.cpp" />
